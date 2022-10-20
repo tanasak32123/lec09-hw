@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Your Scores</h1>
+
+<div id="scores">
+  <% @scores.each do |score| %>
+    <%= render score %>
+    <%= button_to "Edit this score", edit_score_path(score.id), method: :get %> <br>
+    <%= button_to "Destroy this score", delete_score_path(score.id,score.student_id), method: :delete %> 
+    <p>---------------------------</p>
+  <% end %>
+</div>
+
+<div id="summary">
+  <h3>Summary</h3>
+  <p>Average score: <%= @average_score %></p>
+  <p>Max subject score: <%= @most_score %></p>
+  <p>---------------------------</p>
+</div>
+
+<%= link_to "New scores", new_this_student_score_path(@scores.first.student_id) %>

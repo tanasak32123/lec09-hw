@@ -1,0 +1,14 @@
+<div class="container mt-4 mb-4">
+    <h2>Login</h2>
+    <%= form_with url: main_create_path, method: :post, data: {turbo: false} do |form| %>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="pasword" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    <% end %>
+</div>
